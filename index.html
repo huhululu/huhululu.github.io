@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next muse use-motion" lang="">
+<html class="theme-next pisces use-motion" lang="">
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -79,13 +79,16 @@
 
 
 
+<meta name="description" content="没啥深度,实验用用">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
+<meta property="og:title" content="严东阳综合实验记录">
 <meta property="og:url" content="http://yoursite.com/index.html">
-<meta property="og:site_name" content="Hexo">
+<meta property="og:site_name" content="严东阳综合实验记录">
+<meta property="og:description" content="没啥深度,实验用用">
 <meta property="og:locale" content="default">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
+<meta name="twitter:title" content="严东阳综合实验记录">
+<meta name="twitter:description" content="没啥深度,实验用用">
 
 
 
@@ -93,7 +96,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Muse',
+    scheme: 'Pisces',
     version: '5.1.4',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
@@ -121,7 +124,7 @@
 
 
 
-  <title>Hexo</title>
+  <title>严东阳综合实验记录</title>
   
 
 
@@ -152,7 +155,7 @@
     <div class="custom-logo-site-title">
       <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">Hexo</span>
+        <span class="site-title">严东阳综合实验记录</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
@@ -232,13 +235,13 @@
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/19/Hexo建站记录/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="John Doe">
+      <meta itemprop="name" content="严东阳">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
+      <meta itemprop="name" content="严东阳综合实验记录">
     </span>
 
     
@@ -248,7 +251,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/12/19/Hexo建站记录/" itemprop="url">Untitled</a></h1>
+                <a class="post-title-link" href="/2018/12/19/Hexo建站记录/" itemprop="url">Hexo建站记录</a></h1>
         
 
         <div class="post-meta">
@@ -299,39 +302,19 @@
 
       
         
-          
-            <p>Hexo建站记录</p>
-<p>首先,hexo有比较详尽的的中文文档,对于中文不好的同学是个福音</p>
-<p>链接在这: hexo中文文档](<a href="https://hexo.io/zh-cn/docs/index.html" target="_blank" rel="noopener">https://hexo.io/zh-cn/docs/index.html</a>)</p>
-<p>这篇文章只是建站执行流程的一个流水账记录,因为我要写实验报告(汗)</p>
-<p>首先,要安装nodejs 和 git,我的node和git版本如下</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">➜  blog node -v</span><br><span class="line">v10.14.1</span><br><span class="line">➜  blog git version</span><br><span class="line">git version 2.7.4</span><br></pre></td></tr></table></figure>
-<p>然后安装hexo-cli和hexo-deployer-git(hexo部署到git page的deployer)</p>
-<p><code>➜  blog sudo npm install -g hexo-cli</code></p>
-<p>之后使用<code>hexo init</code>命令来拷贝所需文件到目标目录下</p>
-<p><code>➜  hexo hexo init test</code></p>
-<p>输出有一堆,我就不粘贴上来了</p>
-<p>如果有拓展文件没装上,可以在相关目录下再跑一次 npm install</p>
-<p>目标文件夹下生成的文件如下</p>
-<p>➜  test ls<br>_config.yml       package-lock.json scaffolds         themes<br>node_modules      package.json      source</p>
-<p>生成下网站页面</p>
-<p><code>hexo generate</code></p>
-<p>又是一长串输出</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">➜  <span class="built_in">test</span> hexo generate</span><br><span class="line">INFO  Start processing</span><br><span class="line">INFO  Files loaded <span class="keyword">in</span> 290 ms</span><br><span class="line">INFO  Generated: index.html</span><br><span class="line">INFO  Generated: archives/index.html</span><br><span class="line">INFO  Generated: fancybox/blank.gif</span><br><span class="line">INFO  Generated: fancybox/jquery.fancybox.css</span><br><span class="line">INFO  Generated: fancybox/fancybox_loading.gif</span><br><span class="line">INFO  Generated: fancybox/fancybox_overlay.png</span><br><span class="line">INFO  Generated: fancybox/fancybox_loading@2x.gif</span><br><span class="line">INFO  Generated: fancybox/fancybox_sprite.png</span><br><span class="line">INFO  Generated: archives/2018/12/index.html</span><br><span class="line">INFO  Generated: fancybox/fancybox_sprite@2x.png</span><br><span class="line">INFO  Generated: archives/2018/index.html</span><br><span class="line">INFO  Generated: css/fonts/FontAwesome.otf</span><br><span class="line">INFO  Generated: js/script.js</span><br><span class="line">INFO  Generated: fancybox/helpers/jquery.fancybox-buttons.css</span><br><span class="line">INFO  Generated: fancybox/jquery.fancybox.pack.js</span><br><span class="line">INFO  Generated: fancybox/helpers/jquery.fancybox-buttons.js</span><br><span class="line">INFO  Generated: fancybox/helpers/jquery.fancybox-thumbs.css</span><br><span class="line">INFO  Generated: fancybox/helpers/jquery.fancybox-media.js</span><br><span class="line">INFO  Generated: fancybox/helpers/jquery.fancybox-thumbs.js</span><br><span class="line">INFO  Generated: css/style.css</span><br><span class="line">INFO  Generated: css/fonts/fontawesome-webfont.woff</span><br><span class="line">INFO  Generated: css/fonts/fontawesome-webfont.eot</span><br><span class="line">INFO  Generated: fancybox/helpers/fancybox_buttons.png</span><br><span class="line">INFO  Generated: css/fonts/fontawesome-webfont.svg</span><br><span class="line">INFO  Generated: css/fonts/fontawesome-webfont.ttf</span><br><span class="line">INFO  Generated: 2018/12/19/hello-world/index.html</span><br><span class="line">INFO  Generated: css/images/banner.jpg</span><br><span class="line">INFO  Generated: fancybox/jquery.fancybox.js</span><br><span class="line">INFO  28 files generated <span class="keyword">in</span> 632 ms</span><br></pre></td></tr></table></figure>
-<p>当前目录下会多出一个public文件夹,就是生成的网站    </p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">➜  <span class="built_in">test</span> ls</span><br><span class="line">_config.yml       node_modules      package.json      scaffolds         themes</span><br><span class="line">db.json           package-lock.json public            <span class="built_in">source</span></span><br></pre></td></tr></table></figure>
-<p>然后执行hexo server,启动服务</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">➜  <span class="built_in">test</span> hexo server</span><br><span class="line">INFO  Start processing</span><br><span class="line">INFO  Hexo is running at http://localhost:4000 . Press Ctrl+C to stop.</span><br></pre></td></tr></table></figure>
-<p>可以看到,网站已经建立起来了<br><img src="https://ws4.sinaimg.cn/large/006tNbRwgy1fycbmdbow6j31g40u0b29.jpg" alt="image-20181219165345722"><br>接下来,来写点东西,</p>
-<p>​    </p>
-<p>新建文章的命令为 <code>hexo new &quot;title&quot;</code></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">➜  <span class="built_in">test</span> hexo new <span class="string">"title"</span></span><br><span class="line">INFO  Created: ~/Desktop/coding/hexo/<span class="built_in">test</span>/<span class="built_in">source</span>/_posts/title.md</span><br></pre></td></tr></table></figure>
-<p>可以看到,建立了一个名为title的markdown文件</p>
-
-          
+          <p>首先,hexo有比较详尽的的中文文档,对于中文不好的同学是个福音</p>
+<p>链接在这: <a href="https://hexo.io/zh-cn/docs/index.html" target="_blank" rel="noopener">hexo中文文档</a></p>
+<p>这篇文章只是建站执行流程的一个流水账记录,因为我要写实验报告(汗)<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/12/19/Hexo建站记录/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
-    </div>
+    </p></div>
     
     
     
@@ -397,8 +380,8 @@
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
-              <p class="site-author-name" itemprop="name">John Doe</p>
-              <p class="site-description motion-element" itemprop="description"></p>
+              <p class="site-author-name" itemprop="name">严东阳</p>
+              <p class="site-description motion-element" itemprop="description">没啥深度,实验用用</p>
           </div>
 
           <nav class="site-state motion-element">
@@ -453,7 +436,7 @@
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">John Doe</span>
+  <span class="author" itemprop="copyrightHolder">严东阳</span>
 
   
 </div>
@@ -467,7 +450,7 @@
 
 
 
-  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
 
 
 
@@ -514,6 +497,8 @@
   
 
 
+  
+
 
 
 
@@ -554,6 +539,11 @@
     <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
   
 
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
 
   
 
@@ -566,6 +556,13 @@
 
   
   
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
 
   
 
