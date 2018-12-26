@@ -87,7 +87,7 @@
 <meta property="og:description" content="首先,hexo有比较详尽的的中文文档,对于中文不好的同学是个福音 链接在这: hexo中文文档 原本我是打算写一点记一点的,后来发现自己还是太年轻了,可能记录的没有那么详细,因为很多功能都是后来想起来才添上去这篇文章只是建站执行流程的一个流水账记录,因为我要写实验报告(汗)">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="https://ws4.sinaimg.cn/large/006tNbRwgy1fycbmdbow6j31g40u0b29.jpg">
-<meta property="og:updated_time" content="2018-12-24T11:18:31.687Z">
+<meta property="og:updated_time" content="2018-12-25T06:23:31.869Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo建站记录">
 <meta name="twitter:description" content="首先,hexo有比较详尽的的中文文档,对于中文不好的同学是个福音 链接在这: hexo中文文档 原本我是打算写一点记一点的,后来发现自己还是太年轻了,可能记录的没有那么详细,因为很多功能都是后来想起来才添上去这篇文章只是建站执行流程的一个流水账记录,因为我要写实验报告(汗)">
@@ -307,7 +307,7 @@
 <a id="more"></a>
 <p>首先,要安装nodejs 和 git,我的node和git版本如下</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">➜  blog node -v</span><br><span class="line">v10.14.1</span><br><span class="line">➜  blog git version</span><br><span class="line">git version 2.7.4</span><br></pre></td></tr></table></figure>
-<p>然后安装hexo-cli和hexo-deployer-git(hexo部署到git page的deployer)</p>
+<p>然后安装hexo-cli和hexo-deployer-git(hexo部署到git page的deployer),因为接下来我要用git的Github Pages,所以这个一定要装</p>
 <p><code>➜  blog sudo npm install -g hexo-cli</code></p>
 <p>之后使用<code>hexo init</code>命令来拷贝所需文件到目标目录下</p>
 <p><code>➜  hexo hexo init test</code></p>
@@ -323,11 +323,16 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">➜  <span class="built_in">test</span> ls</span><br><span class="line">_config.yml       node_modules      package.json      scaffolds         themes</span><br><span class="line">db.json           package-lock.json public            <span class="built_in">source</span></span><br></pre></td></tr></table></figure>
 <p>然后执行hexo server,启动服务</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">➜  <span class="built_in">test</span> hexo server</span><br><span class="line">INFO  Start processing</span><br><span class="line">INFO  Hexo is running at http://localhost:4000 . Press Ctrl+C to stop.</span><br></pre></td></tr></table></figure>
-<p>可以看到,网站已经建立起来了<br><img src="https://ws4.sinaimg.cn/large/006tNbRwgy1fycbmdbow6j31g40u0b29.jpg" alt="image-20181219165345722"><br>接下来,来写点东西,</p>
-<p>​    </p>
+<p>可以看到,网站已经建立起来了<br><img src="https://ws4.sinaimg.cn/large/006tNbRwgy1fycbmdbow6j31g40u0b29.jpg" alt="image-20181219165345722"><br>接下来,来写点东西</p>
 <p>新建文章的命令为 <code>hexo new &quot;title&quot;</code></p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">➜  <span class="built_in">test</span> hexo new <span class="string">"title"</span></span><br><span class="line">INFO  Created: ~/Desktop/coding/hexo/<span class="built_in">test</span>/<span class="built_in">source</span>/_posts/title.md</span><br></pre></td></tr></table></figure>
 <p>可以看到,建立了一个名为title的markdown文件</p>
+<p>当然,其实不这么写也行,就普普通通的写markdown文件,自己在开头部分用<code>---</code>符号写上Front-matter内容就可以了</p>
+<p>在自己电脑完成基本的文章写作之后肯定是要发布到网站上去的,这个时候,就要使用到前面提到的Github Pages了,首先要新建一个github的repository,然后在里面把username.github.io设为repository名字<br>接下来要设置一下git的ssh密钥<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$ssh</span>-keygen -t rsa -C <span class="string">"your_email@example.com"</span></span><br></pre></td></tr></table></figure></p>
+<p>这样就能产生一对新的ssh密钥,这对密钥默认存放在~/.ssh目录下<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">➜  ~ cd .ssh</span><br><span class="line">➜  .ssh ls</span><br><span class="line">id_rsa      id_rsa.pub  known_hosts</span><br><span class="line">➜  .ssh</span><br></pre></td></tr></table></figure></p>
+<p>然后在GitHub里面添加SSH Keys,这个比较简单,就不截图了<br>添加之后,可以测试一下<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">➜  ~ ssh -T git@github.com</span><br><span class="line">Hi huhululu! You've successfully authenticated, but GitHub does not provide shell access.</span><br><span class="line">➜  ~</span><br></pre></td></tr></table></figure></p>
+<p>像这样显示输出结果,基本就是没问题的<br>现在已经能通过SSH 连接到GitHub了,这个时候可以通过<code>git config --global user.name</code>和<code>git config --global user.email</code>对提交时的用户名和邮箱进行配置,然后就是把本地的hexo提交到Github Pages上了<br>首先,要更改根目录下的_config.yml文件,我的更改如下:<br><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line"><span class="attr">  type:</span> <span class="string">git</span></span><br><span class="line"><span class="attr">  repository:</span> <span class="string">git@github.com:huhululu/huhululu.github.io.git</span> </span><br><span class="line"><span class="attr">  branch:</span> <span class="string">master</span></span><br></pre></td></tr></table></figure></p>
+<p>我是使用的ssh方式传输,其实也可以使用https传输<br>接下来在根目录执行<code>hexo d -g</code>就可以生成新的静态网站并推送到GitHub<br>基本的博客搭建到这里其实已经完成,后面是一些对博客的美化<br>hexo的博客美化是比较简单的,我是使用了最流行的next主题进行美化,主题的配置一般只要编辑站点的配置文件<code>/_config.yml</code>,主题的配置文件<code>/themes/next/_config.yml</code>就可以了<br>先修改</p>
 
       
     </div>
@@ -348,6 +353,22 @@
       
       
 
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/12/26/TensorFlow开发记录/" rel="prev" title="">
+                 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
       
 
       
@@ -412,7 +433,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-count">2</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
